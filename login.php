@@ -11,19 +11,39 @@
     <title>Přihlášení</title>
 </head>
 <body>
-<form method="post">
-    <p>Login:</p><br>
-    <input type="text" name="login">
-    <p>Password:</p>
-    <input type="password" name="password">
-    <input type="submit">
-</form>
+<br>
+<div class="container-fluid" >
+    <div class="row justify-content-lg-center">
 
-<?php
-if (isset($_POST['login'])) {
-    var_dump($_POST);
-}
-?>
+
+        <div class="col-md-4">
+            <form method="post">
+
+                <div class="form-group">
+                    <p>Login:</p>
+                    <input type="text" name="login" placeholder="Zadejte login" class="form-control">
+                </div>
+
+                <div class="form-group">
+                <p>Heslo:</p>
+                <input type="password" name="password" placeholder="Zadejte heslo" class="form-control">
+                </div>
+
+                <input type="submit" value="Přihlásit" class="btn btn-primary" >
+            </form>
+            <?php
+            if (isset($_POST['login'])) {
+                echo "<br>";
+                var_dump($_POST);
+            }
+            ?>
+        </div>
+
+
+    </div>
+
+</div>
+
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
