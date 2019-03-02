@@ -27,15 +27,28 @@
         </tr>
         </thead>
         <tbody>
+        <?php
+            $pocet = 0;
+            $soucet = 0;
+            foreach ($predmety as $predmet => $znamka) {
+
+        ?>
             <tr>
-                <td>prvni sloupec</td>
-                <td>druhy sloupec</td>
+                <td><?php echo $predmet; ?></td>
+                <td><?php echo $znamka; ?></td>
             </tr>
+        <?php
+            $soucet += $znamka;
+            $pocet++;
+
+            }
+        ?>
         </tbody>
     </table>
-
-    Průměr:
+    Průměr: <?php echo $soucet / $pocet; ?>
 
 </div>
 </body>
 </html>
+
+<?php echo array_sum($predmety) / count($predmety); ?>
